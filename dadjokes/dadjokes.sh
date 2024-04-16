@@ -18,4 +18,4 @@ fi
 joke=$(curl -s https://icanhazdadjoke.com)
 iconpath=$(pwd)
 echo $iconpath
-notify-send -a dadjokes -u critical -i "${iconpath}/1151214.png"  "Joke" "${joke}"
+notify-send -a dadjokes -u critical -i "${iconpath}/dad.png"  "Joke" "${joke}"
