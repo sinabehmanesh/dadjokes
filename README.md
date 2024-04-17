@@ -1,5 +1,6 @@
 # Linux-tools
-This repo contains tools and jokes I made about daily Linux usage!
+This repo contains tools and jokes I made about my daily Linux usage!
+
 
 ## Tools
 
@@ -22,6 +23,7 @@ the example will be:
 > try fetching new resources for your jokes, and also you can change the execution behavior.
 
 
+> This repo is under maintenance! 🍺🔧
 
 > [!TIP]
 > ***No rights reserved!***
