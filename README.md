@@ -24,4 +24,4 @@ the example will be:
 
 
 > [!TIP]
-> No rights reserved!
+> ***No rights reserved!***
