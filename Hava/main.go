@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/enescakir/emoji"
 	"github.com/joho/godotenv"
 )
 
@@ -43,15 +44,27 @@ func current_weather(city string) string {
 
 // Define view Weather
 func view_weather(fcity Types.Weather_type, scity Types.Weather_type) {
-	fmt.Println("We have tmpurature of ", fcity.Current.TempC, " in "+fcity.Location.Name)
+	fmt.Println(fcity.Location.Name, " tmpurature is ", fcity.Current.TempC, " but it feels like: ", fcity.Current.FeelslikeC)
+	if fcity.Current.Cloud < 30 {
+		fmt.Println("sky resolution is perfect! few clouds can be seen in the area!", emoji.SunWithFace)
+	} else if fcity.Current.Cloud > 30 && fcity.Current.Cloud < 60 {
+		fmt.Println("We have a Cloud sky today, hope it rains i Guess!", emoji.SunBehindCloud)
+	} else if fcity.Current.Cloud > 60 {
+		fmt.Println("Clouds are everywhere!", emoji.Cloud)
+	}
+
+	fmt.Println("Current speed of wind is: ", fcity.Current.WindKph, " marching to the ", fcity.Current.WindDir)
+
 	fmt.Println("We have tmpurature of ", scity.Current.TempC, " in "+scity.Location.Name)
 }
 
 // Define the main function
 func main() {
 
-	first_city := "Paris"
+	//Yes try to hardcode it.
+	first_city := "Munich"
 	second_city := "Tehran"
+
 	//Get current weather or the first city
 
 	current_first_city := current_weather(first_city)
@@ -64,5 +77,4 @@ func main() {
 	json.Unmarshal([]byte(current_second_city), &scity_weather)
 
 	view_weather(fcity_weather, scity_weather)
-
 }
