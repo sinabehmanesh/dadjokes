@@ -13,6 +13,7 @@ jobs:
           args: ${{ env.workspace }} -i js,go,html,css
       - name: Echo scc output
         run: |
+            go install github.com/boyter/scc/v3@latest
             echo "::group::Output"
             echo "${{ steps.scc.outputs.scc }}"
             echo "${{ fromJson(steps.scc.outputs.scc)[0].Code }}"
