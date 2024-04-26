@@ -1,5 +1,8 @@
-on: [push]
-
+on:
+  push:
+    branches:
+      - main
+      - dev
 jobs:
   scc_job:
     runs-on: ubuntu-latest
