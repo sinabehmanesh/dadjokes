@@ -14,8 +14,6 @@ import (
 )
 
 func current_weather(city string) string {
-	fmt.Println("checking weather for: " + city)
-
 	godotenv.Load(".env")
 	api_url := os.Getenv("api_url")
 	api_key := os.Getenv("api_key")
@@ -43,19 +41,27 @@ func current_weather(city string) string {
 }
 
 // Define view Weather
-func view_weather(fcity Types.Weather_type, scity Types.Weather_type) {
-	fmt.Println(fcity.Location.Name, " tmpurature is ", fcity.Current.TempC, " but it feels like: ", fcity.Current.FeelslikeC)
-	if fcity.Current.Cloud < 30 {
-		fmt.Println("sky resolution is perfect! few clouds can be seen in the area!", emoji.SunWithFace)
-	} else if fcity.Current.Cloud > 30 && fcity.Current.Cloud < 60 {
-		fmt.Println("We have a Cloud sky today, hope it rains i Guess!", emoji.SunBehindCloud)
-	} else if fcity.Current.Cloud > 60 {
-		fmt.Println("Clouds are everywhere!", emoji.Cloud)
+func view_weather(city Types.Weather_type) {
+	fmt.Println(city.Location.Name, " - ", city.Location.Localtime)
+	fmt.Println(emoji.Thermometer, " Tmpurature is", city.Current.TempC, ", it feels like:", city.Current.FeelslikeC)
+	if city.Current.Cloud < 30 {
+		fmt.Println(emoji.SunWithFace, "sky resolution is perfect! few clouds can be seen in the area!")
+	} else if city.Current.Cloud > 30 && city.Current.Cloud < 60 {
+		fmt.Println(emoji.SunBehindCloud, "We have a Cloud sky today, hope it rains i Guess!")
+	} else if city.Current.Cloud > 60 {
+		fmt.Println(emoji.Cloud, "Clouds are everywhere!")
 	}
 
-	fmt.Println("Current speed of wind is: ", fcity.Current.WindKph, " marching to the ", fcity.Current.WindDir)
+	//city WIND report
+	if city.Current.WindKph < 15 {
+		fmt.Println(emoji.LeafFlutteringInWind, " Calm and chill...")
+	} else if city.Current.WindKph >= 15 && city.Current.WindKph < 25 {
+		fmt.Println(emoji.Fog, " Its quiet windy out there! ", city.Current.WindDir)
+	} else if city.Current.WindKph > 25 {
+		fmt.Println(emoji.Tornado, " Do not Go out! ", city.Current.WindDir)
+	}
 
-	fmt.Println("We have tmpurature of ", scity.Current.TempC, " in "+scity.Location.Name)
+	fmt.Println()
 }
 
 // Define the main function
@@ -76,5 +82,6 @@ func main() {
 	json.Unmarshal([]byte(current_first_city), &fcity_weather)
 	json.Unmarshal([]byte(current_second_city), &scity_weather)
 
-	view_weather(fcity_weather, scity_weather)
+	view_weather(fcity_weather)
+	view_weather(scity_weather)
 }
