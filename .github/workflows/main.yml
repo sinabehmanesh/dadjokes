@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: scc
-        run: wget https://github.com/boyter/scc/releases/download/v3.2.0/scc_Linux_x86_64.tar.gz;  tar xvf scc_linux_x86_64.tar.gz; ./scc 
+        run: wget https://github.com/boyter/scc/releases/download/v3.2.0/scc_Linux_x86_64.tar.gz;  tar xvf scc_Linux_x86_64.tar.gz; ./scc 
