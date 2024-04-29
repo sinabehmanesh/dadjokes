@@ -3,9 +3,9 @@ message="Status Check"
 day=$(cat /home/sina.behmanesh/activedays)
 date=$(date +%r)
 final_date="Day ${day} - ${date}"
-company="Agile Robots AG"
-team="SOPL Regiment"
-location="Obersendling, Munich, Germany"
+company="US second devision"
+team=""
+location="Munich, Germany"
 status="Agent Status:"
 starter="....."
 
