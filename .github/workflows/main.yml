@@ -8,10 +8,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Get the lines of code.
-        id: scc
-        uses: iryanbell/scc-docker-action@v1.0.2
-        with:
-          args: ${{ env.workspace }} -i js,go,html,css
-      - name: output
-        run: scc -h ; scc Linux-tools ; scc .
+      - name: get scc
+        run: |
+          wget https://github.com/boyter/scc/releases/download/v3.2.0/scc_Linux_x86_64.tar.gz
+          tar xvf scc_linux_x86_64.tar.gz
+         ./scc 
