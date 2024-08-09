@@ -1,5 +1,8 @@
 # Dadjokes
 this tool will tell you a dad joke.
+---
+
+![Alt text](https://i.pinimg.com/564x/12/ae/40/12ae4087df77dd56f922f13e5d09a664.jpg)
 
 
 it is meanto change your mood and let you start with your scripting with a Happy face!
