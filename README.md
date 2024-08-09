@@ -2,7 +2,7 @@
 this tool will tell you a dad joke.
 ---
 
-<img src="https://i.pinimg.com/564x/12/ae/40/12ae4087df77dd56f922f13e5d09a664.jpg" width=99% height=30%>
+<img src="https://i.pinimg.com/564x/41/6f/7c/416f7ca8440701d888baf4cea3f06983.jpg" width=99% height=30%>
 
 
 it is meanto change your mood and let you start with your scripting with a Happy face!
