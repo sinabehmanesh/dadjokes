@@ -1,11 +1,9 @@
 # Dadjokes
-
 Random jokes,
 dad jokes!
 ---
 
 <img src="https://i.pinimg.com/564x/41/6f/7c/416f7ca8440701d888baf4cea3f06983.jpg" width=99% height=10%>
-
 
 it is meanto change your mood and let you start with your scripting with a Happy face!
 
