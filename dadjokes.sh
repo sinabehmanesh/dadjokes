@@ -40,6 +40,3 @@ elif [ "$osType" = "Darwin" ]; then
 else
 	echo "OS not supported!"
 fi
-
-
-#notify-send -a dadjokes -u critical -i "${iconpath}"  "Joke" "${joke}"
