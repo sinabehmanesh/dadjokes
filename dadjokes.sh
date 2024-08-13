@@ -9,7 +9,11 @@ Blue='\033[1;36m'
 osType=$(uname -o)
 
 function dadjoke_linux() {
-	echo "Linux dadjoke!"
+	joke=$(curl -s https://icanhazdadjoke.com)
+	iconfile="dad.png"
+	pwd=$(pwd)
+	iconpath="${pwd}/${iconfile}"
+	notify-send -u critical -t 10 -a dadjoke --icon="${iconpath}"  "Joke" "${joke}"
 }
 function dadjoke_macos() {
 	title="Dad Joke"	
